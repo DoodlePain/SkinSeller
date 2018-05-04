@@ -8,7 +8,8 @@ module.exports = {
     //Something
     console.log(Date() + "Start module");
     let replyMarkup = bot.keyboard([
-      ['📩 Something']
+      ['📩 Something'],
+      ['💰 Wallet']
     ], {
       resize: true
     });

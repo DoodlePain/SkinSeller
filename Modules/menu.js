@@ -1,6 +1,7 @@
 const accessToken = require('../Server/accessToken')
 const TeleBot = require('telebot');
 const bot = new TeleBot(accessToken.aT);
+const LV = require('../Server/localVariables')
 var fs = require('fs');
 
 
@@ -27,15 +28,16 @@ module.exports = {
           } else {
             console.log("My Balance is: " + balance / 100 + " USD");
             balance
-            var replyMarkup = bot.keyboard([
-              ['📩 Something']
+            let replyMarkup = bot.keyboard([
+              ['📩 Something'],
+              ['💰 Wallet']
             ], {
               resize: true
             });
 
             opskins.getPurchaseHistory({
               type: 4,
-              per_page: 3
+              per_page: LV.listLimit
             }, (err, resp) => {
               console.log(resp.purchases);
               resp.purchases.forEach(elem => {

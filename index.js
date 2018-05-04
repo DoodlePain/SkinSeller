@@ -7,6 +7,7 @@ var OPSkinsAPI = require('@opskins/api');
 var opskins = new OPSkinsAPI(accessToken.op);
 const Start = require('./Modules/start')
 const Menu = require('./Modules/menu')
+const Wallet = require('./Modules/Transactions/wallet')
 
 
 var fs = require('fs');
@@ -67,4 +68,9 @@ bot.on('/start', msg => {
 // Something
 bot.on(/\bSomething/, msg => {
   Menu.menu(msg);
+});
+
+// Something
+bot.on(/\bWallet/, msg => {
+  Wallet.list(msg);
 });

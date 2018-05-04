@@ -58,4 +58,4 @@ typings/
 .env
 
 # Ignore accessToken
-Server/accessToken.js
+Server/*
